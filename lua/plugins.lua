@@ -3,8 +3,6 @@ vim.cmd [[packadd packer.nvim]]
 --run nvim with this command at the first timne
 --nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
-
-
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
@@ -44,7 +42,63 @@ return require('packer').startup(function(use)
     --Dependency: sudo dnf install gcc gcc-c++
     --El TSUpdate da error. Intentar correrlo en otro momento.
     --use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-    use({ "nvim-treesitter/nvim-treesitter" })
+    use{
+        "nvim-treesitter/nvim-treesitter",
+        config = function()
+            require 'nvim-treesitter.configs'.setup {
+                -- A list of parser names, or "all" (the five listed parsers should always be installed)
+                ensure_installed = {
+                    "lua",
+                    "vim",
+                    "javascript",
+                    "typescript",
+                    "html",
+                    "bash",
+                    "c",
+                    "cpp",
+                    "css",
+                    "gitcommit", "gitignore",
+                    "json",
+                    "markdown",
+                    "php",
+                    "scss",
+                    "sql",
+                    "tsx",
+                },
+            
+                -- Install parsers synchronously (only applied to `ensure_installed`)
+                sync_install = true,
+            
+                -- Automatically install missing parsers when entering buffer
+                -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+                auto_install = true,
+            
+                -- List of parsers to ignore installing (for "all")
+                --ignore_install = { "javascript" },
+            
+                ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
+                -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+            
+                highlight = {
+                    enable = true,
+                    -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
+                    -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
+                    -- the name of the parser)
+                    -- list of language that will be disabled
+                    -- disable = { "c", "rust" },
+                    -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
+            
+                    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+                    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+                    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+                    -- Instead of true it can also be a list of languages
+                    additional_vim_regex_highlighting = false,
+                },
+            }
+            
+        end
+        , run = ":TSUpdate"
+    }
 
     --LSP-ZERP
     use {
@@ -67,9 +121,27 @@ return require('packer').startup(function(use)
     }
 
     -- Color Parenthesis Rainbow
-    --use {"mrjones2014/nvim-ts-rainbow", requires = {
---	    {"nvim-treesitter/nvim-treesitter"},
- --   }}
+    use {
+        "mrjones2014/nvim-ts-rainbow", requires = {
+	        {"nvim-treesitter/nvim-treesitter"},
+        },config = function()
+            require('nvim-treesitter.configs').setup({
+               	highlight = {
+                		-- ...
+                	},
+                	-- ...
+                	rainbow = {
+                		enable = true,
+                		-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+                		extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+                		max_file_lines = nil, -- Do not enable for files with more than n lines, int
+                		-- colors = {}, -- table of hex strings
+                		-- termcolors = {} -- table of colour name strings
+                	},
+                })
+            end
+        }
+    }
 
     --Tab lines
     use "lukas-reineke/indent-blankline.nvim"
