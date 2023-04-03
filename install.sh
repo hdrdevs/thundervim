@@ -52,8 +52,8 @@ function os_release() {
 
 	case "$ID" in
 	ubuntu)
-		
-        echo "Ubuntu detected"	
+        echo "Ubuntu detected"
+        sudo apt install gcc g++ git python3-pip cargo nodejs neovim ripgrep
 		;;
 	fedora)
         echo "Fedora detected"	
