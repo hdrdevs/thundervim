@@ -97,7 +97,7 @@ return require('packer').startup(function(use)
             }
             
         end
-        , run = ":TSUpdate"
+        --, run = ":TSUpdate"
     }
 
     --LSP-ZERP
