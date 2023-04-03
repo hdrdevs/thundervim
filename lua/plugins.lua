@@ -3,6 +3,8 @@ vim.cmd [[packadd packer.nvim]]
 --run nvim with this command at the first timne
 --nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
+
+
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 

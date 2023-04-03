@@ -2,6 +2,9 @@ require("plugins")
 
 --lfs exists, so use it.
 if package.loaded["lsp-zero"] then
+
+	require("packer").sync()
+
     require("keys")
     require("settings")
     require("configtheme")
@@ -21,3 +24,4 @@ if package.loaded["lsp-zero"] then
     require("configs.treesitter")
     require("configs.whichkey")
 end
+
