@@ -84,8 +84,8 @@ function run_install(){
     print_text "Installig Packer..."
     git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
     
-    BASE_DIR="~/.config"
-    DIR="${BASE_DIR}/nvim"
+    BASE_DIR=~/.config
+    DIR=$BASE_DIR/nvim
 	if [ -d "$DIR" ];
 	then
 		echo "backup existing configuration"
