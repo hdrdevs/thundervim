@@ -67,7 +67,9 @@ return require('packer').startup(function(use)
     }
 
     -- Color Parenthesis Rainbow
-    use("mrjones2014/nvim-ts-rainbow")
+    use {"mrjones2014/nvim-ts-rainbow", requires = {
+	    {"nvim-treesitter/nvim-treesitter"},
+    }
 
     --Tab lines
     use "lukas-reineke/indent-blankline.nvim"
