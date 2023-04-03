@@ -140,7 +140,7 @@ return require('packer').startup(function(use)
                 	},
                 })
             end
-        }
+        
     }
 
     --Tab lines
