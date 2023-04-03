@@ -33,6 +33,7 @@ else
 
     --plugin confis
 
+    require("configs.treesitter")
     require("configs.cokeline")
     require("configs.colorizer")
     require("configs.feline")
@@ -41,7 +42,6 @@ else
     require("configs.project")
     require("configs.rainbow")
     require("configs.tablines")
-    require("configs.treesitter")
     require("configs.whichkey")
     end
 end
