@@ -1,7 +1,7 @@
 require("plugins")
 
 --lfs exists, so use it.
-if package.loaded("lsp-zero") then
+if package.loaded["lsp-zero"] then
     require("keys")
     require("settings")
     require("configtheme")
