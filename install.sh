@@ -82,6 +82,7 @@ function run_install(){
     os_release
 
     print_text "Installig Packer..."
+    mkdir -p ~/.local/share/nvim/site/pack/packer/start/packer.nvim
     git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
     
     BASE_DIR=~/.config/
