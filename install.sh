@@ -97,8 +97,8 @@ function run_install(){
     mv "${BASE_DIR}/${PROGRAM_NAME}" "${BASE_DIR}/nvim"
 
     # run neovim excuting PackerSync
-    print_text "Building ${PROGRAM_NAME} interface..."
-    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+    #print_text "Building ${PROGRAM_NAME} interface..."
+    #nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
     print_green "Done! :)"
     echo "run nvim command from your terminal and type :PackerSync"
