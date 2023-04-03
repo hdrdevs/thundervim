@@ -82,19 +82,18 @@ function run_install(){
     os_release
 
     print_text "Installig Packer..."
-    mkdir -p ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-    git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
     
     BASE_DIR=~/.config/
     DIR=$BASE_DIR/nvim
 	if [ -d "$DIR" ];
 	then
 		echo "backup existing configuration"
-		mv $DIR "${BASE_DIR}/nvim.previous.bkp"
+		mv $DIR "${BASE_DIR}nvim.previous.bkp"
 	fi
 
     print_text "Installing ${PROGRAM_NAME}..."
-    git clone https://github.com/hdrdevs/thundervim.git "${BASE_DIR}/${PROGRAM_NAME}"
+    git clone https://github.com/hdrdevs/thundervim.git "${BASE_DIR}${PROGRAM_NAME}"
     mv "${BASE_DIR}/${PROGRAM_NAME}" "${BASE_DIR}/nvim"
 
     # run neovim excuting PackerSync
