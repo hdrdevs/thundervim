@@ -99,6 +99,11 @@ function run_install(){
     # run neovim excuting PackerSync
     print_text "Building ${PROGRAM_NAME} interface..."
     nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+
+	# run neovim excuting PackerSync
+    print_text "Building ${PROGRAM_NAME} Packer Syinc..."
+    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+
     
     #print_text "Running TSUpdate..."
     #nvim --headless -c 'autocmd User TSUpdateComplete quitall' -c 'TSUpdate'
