@@ -1,8 +1,28 @@
 
+require("plugins")
+
+    local file_path = os.getenv("HOME") .. '/.config/nvim/sync.lua'
+
+function file_exists()
+   local f=io.open(file_path,"r")
+   if f~=nil then io.close(f) return true else return false end
+end
+
+
+function create_file()
+    local theme_file = io.open(file_path, "w")
+    	io.output(theme_file)
+    	io.write("ok")
+   	io.close(theme_file)
+end
+
 --lfs exists, so use it.
 if package.loaded["packer"] then
 
-	--require("packer").sync()
+    if not file_exists() then
+        require("packer").sync()
+        create_file()
+    end
 
     require("keys")
     require("settings")
@@ -25,5 +45,4 @@ if package.loaded["packer"] then
 end
 
 
-require("plugins")
 
