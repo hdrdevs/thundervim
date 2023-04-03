@@ -99,6 +99,7 @@ function run_install(){
     # run neovim excuting PackerSync
     print_text "Building ${PROGRAM_NAME} interface..."
     nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'TSUpdate'
 
     print_green "Done! :)"
     echo "run nvim command from your terminal"

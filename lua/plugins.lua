@@ -40,7 +40,9 @@ return require('packer').startup(function(use)
 
     --Treesitter
     --Dependency: sudo dnf install gcc gcc-c++
-    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+    --El TSUpdate da error. Intentar correrlo en otro momento.
+    --use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+    use({ "nvim-treesitter/nvim-treesitter" })
 
     --LSP-ZERP
     use {
