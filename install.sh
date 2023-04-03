@@ -94,7 +94,7 @@ function run_install(){
 
     print_text "Installing ${PROGRAM_NAME}..."
     git clone https://github.com/hdrdevs/thundervim.git "${BASE_DIR}/${PROGRAM_NAME}"
-    mv "${BASE_DIR}/thundervim" "${BASE_DIR}/nvim"
+    mv "${BASE_DIR}/${PROGRAM_NAME}" "${BASE_DIR}/nvim"
 
     # run neovim excuting PackerSync
     print_text "Building ${PROGRAM_NAME} interface..."
