@@ -1,15 +1,16 @@
 
 require("plugins")
 
-    local file_path = os.getenv("HOME") .. '/.config/nvim/sync.lua'
 
 function file_exists()
+    local file_path = os.getenv("HOME") .. '/.config/nvim/sync.lua'
    local f=io.open(file_path,"r")
    if f~=nil then io.close(f) return true else return false end
 end
 
 
 function create_file()
+    local file_path = os.getenv("HOME") .. '/.config/nvim/sync.lua'
     local theme_file = io.open(file_path, "w")
     	io.output(theme_file)
     	io.write("ok")
@@ -22,7 +23,7 @@ if package.loaded["packer"] then
     if not file_exists() then
         require("packer").sync()
         create_file()
-    end
+else
 
     require("keys")
     require("settings")
@@ -42,6 +43,7 @@ if package.loaded["packer"] then
     require("configs.tablines")
     require("configs.treesitter")
     require("configs.whichkey")
+    end
 end
 
 
