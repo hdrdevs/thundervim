@@ -100,8 +100,9 @@ function run_install(){
     print_text "Building ${PROGRAM_NAME} interface..."
     nvim --headless -c 'autocmd User PackerComplete quitall' -c ''
 
+    echo ""
     print_green "Done! :)"
-    echo "run nvim command from your terminal and type :PackerSync"
+    echo "Please run ${TXT_BOLD}nvim${TXT_NORMAL} command from your terminal and type ${TXT_BOLD}:Mason${TXT_NORMAL} to complete the installation process."
 }
 
 # COMIENZA LA INSTALACION
