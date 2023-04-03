@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROGRAM_NAME="thunderVIM"
+PROGRAM_NAME="thundervim"
 COLOR_GREEN='\033[0;32m'
 COLOR_NO='\033[0m'
 TXT_BOLD=$(tput bold)
@@ -77,15 +77,24 @@ function print_text() {
 
 
 function run_install(){
-    print_green "Script de instalacion de ${PROGRAM_NAME}"
+    print_green "${PROGRAM_NAME} installing script"
 
     os_release
 
-    print_text "Instalando Packer..."
+    print_text "Installig Packer..."
     git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+    
+    BASE_DIR="~/.config"
+    DIR="${BASE_DIR}/nvim"
+	if [ -d "$DIR" ];
+	then
+		echo "backup existing configuration"
+		mv $DIR "${BASE_DIR}/nvim.previous.bkp"
+	fi
 
-    print_text "Instalando ${PROGRAM_NAME}..."
-    git clone http://192.168.1.70:8020/horacio/nvim.git ~/.config/
+    print_text "Installing ${PROGRAM_NAME}..."
+    git clone https://github.com/hdrdevs/thundervim.git $BASE_DIR
+    mv "${BASE_DIR}/thundervim" "${BASE_DIR}/nvim"
 
     # run neovim excuting PackerSync
     print_text "Building ${PROGRAM_NAME} interface..."
