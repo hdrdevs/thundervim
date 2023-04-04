@@ -53,7 +53,9 @@ function os_release() {
 	case "$ID" in
 	ubuntu)
         echo "Ubuntu detected"
-        sudo apt install gcc g++ git python3-pip cargo nodejs neovim ripgrep
+        sudo apt install gcc g++ git python3-pip cargo nodejs ripgrep
+        wget https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.deb
+        sudo dpkg -i nvim-linux64.deb
 		;;
 	fedora)
         echo "Fedora detected"	
