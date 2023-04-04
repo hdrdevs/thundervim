@@ -23,7 +23,7 @@ if package.loaded["packer"] then
     if not file_exists() then
         require("packer").sync()
         create_file()
-else
+    else
 
     require("keys")
     require("settings")
@@ -33,14 +33,12 @@ else
 
     --plugin confis
 
-    require("configs.treesitter")
     require("configs.cokeline")
     require("configs.colorizer")
     require("configs.feline")
     require("configs.lsp")
     require("configs.nvimtree")
     require("configs.project")
-    require("configs.rainbow")
     require("configs.tablines")
     require("configs.whichkey")
     end
