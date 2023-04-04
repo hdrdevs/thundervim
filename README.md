@@ -1,11 +1,12 @@
 **Thundervim**
 
+[Neovim](https://neovim.io/)
+
+LUA configuration, oriented for web developers (html, css, SCSS, javascript).
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/hdrdevs/thundervim/master/screenshots/thundervim-start.png?raw=true"/>
 </p>
-
-[Neovim](https://neovim.io/)
-LUA configuration, oriented for web developers (html, css, SCSS, javascript).
 
 ![thundervim menu](https://raw.githubusercontent.com/hdrdevs/thundervim/master/screenshots/thundervim-menu.png)
 ![thundervim - gruvbox ](https://raw.githubusercontent.com/hdrdevs/thundervim/master/screenshots/thundervim-gruvbox.png)
