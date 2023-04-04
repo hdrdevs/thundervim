@@ -223,6 +223,9 @@ return require('packer').startup(function(use)
     --VIM FUGITIVE
     use "tpope/vim-fugitive"
 
+    --ROOT PROJECT
+    use "airblade/vim-rooter"
+
     --TABS
     use({
         'willothy/nvim-cokeline',
