@@ -3,11 +3,12 @@
 </p>
 
 **Thundervim**
-[Neovim](https://neovim.io/) LUA configuration, oriented for web developers (html, css, SCSS, javascript).
+[Neovim](https://neovim.io/)
+LUA configuration, oriented for web developers (html, css, SCSS, javascript).
 
 **DEPENDENCIES**
 
--Neovim 0.8+
+-   Neovim 0.8+
 
 **INSTALLATION**
 
