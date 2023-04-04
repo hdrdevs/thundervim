@@ -54,7 +54,8 @@ function os_release() {
 	ubuntu)
         echo "Ubuntu detected"
         sudo apt install gcc g++ git python3-pip cargo nodejs ripgrep
-        wget https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.deb
+        sudo wget https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.deb
+        sudo apt autoremove neovim
         sudo dpkg -i nvim-linux64.deb
 		;;
 	fedora)
