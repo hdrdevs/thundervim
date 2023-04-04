@@ -54,9 +54,9 @@ function os_release() {
 	ubuntu)
         echo "Ubuntu detected"
         sudo apt install gcc g++ git python3-pip cargo nodejs ripgrep -y
-        sudo apt autoremove neovim -y
-        sudo wget https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.deb
-        sudo dpkg -i nvim-linux64.deb
+        #sudo apt autoremove neovim -y
+        #sudo wget https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.deb
+        #sudo dpkg -i nvim-linux64.deb
 		;;
 	fedora)
         echo "Fedora detected"	
@@ -112,10 +112,11 @@ function run_install(){
 
 print_welcome
 
-echo -e "Are you sure you want to install ${TXT_BOLD}${PROGRAM_NAME}${TXT_NORMAL}? (yes|no)"
+echo "you must have installed ${TXT_BOLD}neovim >=0.8${TXT_NORMAL} to install ${PROGRAM_NAME}."
+echo -e "Are you sure you want to install ${TXT_BOLD}${PROGRAM_NAME}${TXT_NORMAL}? (y|n)"
 read test
 
-if [[ $test = "yes" ]]
+if [[ $test = "y" ]]
 then
     run_install
 else
