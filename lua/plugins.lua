@@ -232,7 +232,7 @@ return require('packer').startup(function(use)
     -- STATUS LINE
 use {
   'nvim-lualine/lualine.nvim',
-  requires = { 'nvim-tree/nvim-web-devicons', opt = true, config = function() require("lualine").setup()  end }
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true, config = function() require("lualine").setup{}  end }
 }
 
     --OUTLINE - LSP
