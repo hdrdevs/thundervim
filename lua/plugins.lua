@@ -226,15 +226,6 @@ return require('packer').startup(function(use)
     --ROOT PROJECT
     use "airblade/vim-rooter"
 
-    --TABS
-    --use({
-    --    'willothy/nvim-cokeline',
-    --    requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
-    --    config = function()
-    --       require('cokeline').setup()
-    --   end
-    --})
-
     -- TABS
     use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons', config = function() require("bufferline").setup{}  end}
 

@@ -33,7 +33,6 @@ if package.loaded["packer"] then
 
     --plugin confis
 
-    -- require("configs.cokeline")
     require("configs.colorizer")
     --require("configs.feline")
     require("configs.lsp")
