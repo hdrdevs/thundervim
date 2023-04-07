@@ -230,10 +230,11 @@ return require('packer').startup(function(use)
     use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons', config = function() require("bufferline").setup{}  end}
 
     -- STATUS LINE
-use {
-  'nvim-lualine/lualine.nvim',
-  requires = { 'nvim-tree/nvim-web-devicons', opt = true, config = function() require("lualine").setup{}  end }
-}
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true},
+        config = function() require("lualine").setup{}  end
+    }
 
     --OUTLINE - LSP
     use ({'simrat39/symbols-outline.nvim', config = function() require("symbols-outline").setup() end})
