@@ -61,5 +61,6 @@ wk.register({
         d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go to definition" },
         r = { "<cmd>lua vim.lsp.buf.references()<cr>", "Get references" },
         x = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Refactor" },
+        o = { "<cmd>SymbolsOutline<cr>", "Outline" },
     },
 }, { prefix = "<leader>" })
