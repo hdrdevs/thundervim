@@ -34,7 +34,6 @@ if package.loaded["packer"] then
     --plugin confis
 
     require("configs.colorizer")
-    --require("configs.feline")
     require("configs.lsp")
     require("configs.nvimtree")
     require("configs.project")
