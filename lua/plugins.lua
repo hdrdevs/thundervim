@@ -227,13 +227,15 @@ return require('packer').startup(function(use)
     use "airblade/vim-rooter"
 
     --TABS
-    use({
-        'willothy/nvim-cokeline',
-        requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
-        config = function()
-            require('cokeline').setup()
-        end
-    })
+    --use({
+    --    'willothy/nvim-cokeline',
+    --    requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
+     --   config = function()
+     --       require('cokeline').setup()
+     --   end
+    --})
+
+    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
     --OUTLINE - LSP
     use ({'simrat39/symbols-outline.nvim', config = function() require("symbols-outline").setup() end})
