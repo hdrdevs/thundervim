@@ -226,7 +226,7 @@ return require('packer').startup(function(use)
     --ROOT PROJECT
     use "airblade/vim-rooter"
 
-    TABS
+    --TABS
     use({
         'willothy/nvim-cokeline',
         requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
@@ -235,7 +235,7 @@ return require('packer').startup(function(use)
        end
     })
 
-    -- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons', config = function() require("bufferline").setup{}  end}
+    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons', config = function() require("bufferline").setup{}  end}
 
     --OUTLINE - LSP
     use ({'simrat39/symbols-outline.nvim', config = function() require("symbols-outline").setup() end})
