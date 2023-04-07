@@ -149,7 +149,7 @@ return require('packer').startup(function(use)
 
     --Status Line
     use 'nvim-tree/nvim-web-devicons'
-    use 'freddiehaddad/feline.nvim'
+    --use 'freddiehaddad/feline.nvim'
 
     --AutoPairs
     use {
@@ -226,14 +226,14 @@ return require('packer').startup(function(use)
     --ROOT PROJECT
     use "airblade/vim-rooter"
 
-    --TABS
-    --use({
-    --    'willothy/nvim-cokeline',
-    --    requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
-     --   config = function()
-     --       require('cokeline').setup()
-     --   end
-    --})
+    TABS
+    use({
+        'willothy/nvim-cokeline',
+        requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
+        config = function()
+           require('cokeline').setup()
+       end
+    })
 
     -- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons', config = function() require("bufferline").setup{}  end}
 
