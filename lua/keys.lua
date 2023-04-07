@@ -10,7 +10,7 @@ vim.keymap.set("n", "<F8>", builtin.buffers, {})
 vim.keymap.set("n", "<leader>f", builtin.live_grep, {})
 
 
-vim.keymap.set("n", "<A-i>", function () require("nvterm.terminal").toggle('float') end , { noremap = true, silent = true })
+vim.keymap.set({"n", "t"}, "<A-i>", function () require("nvterm.terminal").toggle('float') end , { noremap = true, silent = true })
 
 -- VISUAL MODE: MOVE TEXT BLOCK
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
