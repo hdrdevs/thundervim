@@ -41,6 +41,7 @@ wk.register({
         m = { "<cmd>MarksListAll<cr>", "List all marks" },
     },
     u = { "<cmd>UndotreeToggle<cr>", "Undo Tree Togle" },
+    i = { "<cmd>TogleTerminal<cr>", "Togle Terminal" },
     t = { "<cmd>ShowTweaks<cr>", "Tweaks dialog" },
     q = { "<cmd>qa<cr>", "Exit to command line" },
     s = {

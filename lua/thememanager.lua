@@ -129,6 +129,11 @@ vim.api.nvim_create_user_command('ShowTweaks', function()
     ShowGlobalMenu()
 end, {})
 
+vim.api.nvim_create_user_command('TogleTerminal', function()
+    require("nvterm.terminal").toggle "float"
+end, {})
+
+
 vim.api.nvim_create_user_command('AddMark', function()
     vim.api.nvim_feedkeys('m;', "m", true)
 end, {})

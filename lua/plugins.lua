@@ -237,5 +237,13 @@ return require('packer').startup(function(use)
 
     use ({'simrat39/symbols-outline.nvim', config = function() require("symbols-outline").setup() end})
 
+    --TERMINAL
+    use {
+  "NvChad/nvterm",
+  config = function ()
+    require("nvterm").setup()
+  end,
+}
+
 
 end)
