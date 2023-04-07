@@ -235,15 +235,15 @@ return require('packer').startup(function(use)
         end
     })
 
+    --OUTLINE - LSP
     use ({'simrat39/symbols-outline.nvim', config = function() require("symbols-outline").setup() end})
 
     --TERMINAL
     use {
-  "NvChad/nvterm",
-  config = function ()
-    require("nvterm").setup()
-  end,
-}
-
+        "NvChad/nvterm",
+        config = function ()
+            require("nvterm").setup()
+        end,
+    }
 
 end)
