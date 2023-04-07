@@ -235,7 +235,7 @@ return require('packer').startup(function(use)
      --   end
     --})
 
-    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons', config = function() require("bufferline").setup{}  end}
+    -- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons', config = function() require("bufferline").setup{}  end}
 
     --OUTLINE - LSP
     use ({'simrat39/symbols-outline.nvim', config = function() require("symbols-outline").setup() end})
