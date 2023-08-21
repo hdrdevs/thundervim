@@ -175,14 +175,6 @@ return require('packer').startup(function(use)
     use 'anuvyklack/hydra.nvim'
     use 'rcarriga/nvim-notify'
 
-    --Dashboards
-    use {
-        "hdrdevs/startup.nvim",
-        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-        config = function()
-            require "startup".setup({ theme = "evil" })
-        end
-    }
 
     --UNDOO
     use 'mbbill/undotree'

@@ -14,9 +14,9 @@ require("nvim-tree").setup({
     hijack_cursor = false,
     hijack_netrw = true,
     hijack_unnamed_buffer_when_opening = false,
-    ignore_buffer_on_setup = false,
-    open_on_setup = false,
-    open_on_setup_file = false,
+    --ignore_buffer_on_setup = false,
+    --open_on_setup = false,
+    --open_on_setup_file = false,
     sort_by = "name",
     root_dirs = {},
     prefer_startup_root = false,
@@ -24,7 +24,7 @@ require("nvim-tree").setup({
     reload_on_bufenter = false,
     respect_buf_cwd = false,
     on_attach = "default",
-    remove_keymaps = false,
+    --remove_keymaps = false,
     select_prompts = false,
     view = {
         centralize_selection = false,
@@ -37,12 +37,12 @@ require("nvim-tree").setup({
         number = false,
         relativenumber = false,
         signcolumn = "yes",
-        mappings = {
-            custom_only = false,
-            list = {
+        --mappings = {
+         --   custom_only = false,
+          --  list = {
                 -- user mappings go here
-            },
-        },
+           -- },
+        --},
         float = {
             enable = false,
             quit_on_focus_loss = true,
@@ -127,7 +127,7 @@ require("nvim-tree").setup({
         update_root = true,
         ignore_list = {},
     },
-    ignore_ft_on_setup = {},
+    --ignore_ft_on_setup = {},
     system_open = {
         cmd = "",
         args = {},
