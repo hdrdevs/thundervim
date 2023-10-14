@@ -26,36 +26,6 @@ require("nvim-tree").setup({
     on_attach = "default",
     --remove_keymaps = false,
     select_prompts = false,
-    view = {
-        centralize_selection = false,
-        cursorline = true,
-        debounce_delay = 15,
-        width = 30,
-        hide_root_folder = false,
-        side = "right",
-        preserve_window_proportions = false,
-        number = false,
-        relativenumber = false,
-        signcolumn = "yes",
-        --mappings = {
-         --   custom_only = false,
-          --  list = {
-                -- user mappings go here
-           -- },
-        --},
-        float = {
-            enable = false,
-            quit_on_focus_loss = true,
-            open_win_config = {
-                relative = "editor",
-                border = "rounded",
-                width = 30,
-                height = 30,
-                row = 1,
-                col = 1,
-            },
-        },
-    },
     renderer = {
         add_trailing = false,
         group_empty = false,

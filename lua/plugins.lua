@@ -42,7 +42,7 @@ return require('packer').startup(function(use)
     --Dependency: sudo dnf install gcc gcc-c++
     --El TSUpdate da error. Intentar correrlo en otro momento.
     --use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-    use{
+    use {
         "nvim-treesitter/nvim-treesitter",
         config = function()
             require 'nvim-treesitter.configs'.setup {
@@ -65,20 +65,20 @@ return require('packer').startup(function(use)
                     "sql",
                     "tsx",
                 },
-            
+
                 -- Install parsers synchronously (only applied to `ensure_installed`)
                 sync_install = true,
-            
+
                 -- Automatically install missing parsers when entering buffer
                 -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
                 auto_install = true,
-            
+
                 -- List of parsers to ignore installing (for "all")
                 --ignore_install = { "javascript" },
-            
+
                 ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
                 -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
-            
+
                 highlight = {
                     enable = true,
                     -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
@@ -87,7 +87,7 @@ return require('packer').startup(function(use)
                     -- list of language that will be disabled
                     -- disable = { "c", "rust" },
                     -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
-            
+
                     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
                     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
                     -- Using this option may slow down your editor, and you may see some duplicate highlights.
@@ -95,7 +95,6 @@ return require('packer').startup(function(use)
                     additional_vim_regex_highlighting = false,
                 },
             }
-            
         end
         --, run = ":TSUpdate"
     }
@@ -121,31 +120,34 @@ return require('packer').startup(function(use)
     }
 
     -- Color Parenthesis Rainbow
-    
-     use {
-        "mrjones2014/nvim-ts-rainbow", requires = {
-	        {"nvim-treesitter/nvim-treesitter"},
-        },config = function()
-            require('nvim-treesitter.configs').setup({
-               	highlight = {
-                		-- ...
-                	},
-                	-- ...
-                	rainbow = {
-                		enable = true,
-                		-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-                		extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-                		max_file_lines = nil, -- Do not enable for files with more than n lines, int
-                		-- colors = {}, -- table of hex strings
-                		-- termcolors = {} -- table of colour name strings
-                	},
-                })
-            end
-        
-    } 
 
-    --Tab lines
-    use "lukas-reineke/indent-blankline.nvim"
+    use {
+        "mrjones2014/nvim-ts-rainbow", requires = {
+        { "nvim-treesitter/nvim-treesitter" },
+    }, config = function()
+        require('nvim-treesitter.configs').setup({
+            highlight = {
+                -- ...
+            },
+            -- ...
+            rainbow = {
+                enable = true,
+                -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+                extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+                max_file_lines = nil, -- Do not enable for files with more than n lines, int
+                -- colors = {}, -- table of hex strings
+                -- termcolors = {} -- table of colour name strings
+            },
+        })
+    end
+
+    }
+
+    --TabLines
+    use {
+        "lukas-reineke/indent-blankline.nvim",
+    }
+
 
     --Status Line
     use 'nvim-tree/nvim-web-devicons'
@@ -219,24 +221,26 @@ return require('packer').startup(function(use)
     use "airblade/vim-rooter"
 
     -- TABS
-    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons', config = function() require("bufferline").setup{}  end}
+    use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons', config = function()
+        require(
+            "bufferline").setup {}
+    end }
 
     -- STATUS LINE
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true},
-        config = function() require("lualine").setup{}  end
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+        config = function() require("lualine").setup {} end
     }
 
     --OUTLINE - LSP
-    use ({'simrat39/symbols-outline.nvim', config = function() require("symbols-outline").setup() end})
+    use({ 'simrat39/symbols-outline.nvim', config = function() require("symbols-outline").setup() end })
 
     --TERMINAL
     use {
         "NvChad/nvterm",
-        config = function ()
+        config = function()
             require("nvterm").setup()
         end,
     }
-
 end)
